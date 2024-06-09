@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+       background: #f5f5f5; 
+    }
+    .toggle{
+        position: relative;
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0,08);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+    }
+.toggle span{
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: #1863ff;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+.toggle span:nth-child(1){
+    transform: translateY(-1px);
+    width: 35px;
+    left: 15px;
+}
+.toggle.active span:nth-child(1){
+    transform: translateY(0px) rotate(-315deg);
+    width: 40px;
+    transition-delay: 0.25s;
+}
+.toggle span:nth-child(2){
+    transform: translateY(15px);
+    width: 35px;
+    left: 15px;
+}
+.toggle.active span:nth-child(2){
+    transform: translateY(0px) rotate(315deg);
+    width: 40px;
+    transition-delay: 0.25s;
+}
+
+
+/* .close-button {
+  transition: transform 0.3s ease-in-out;
+} */
+
+
+
+    </style>
+</head>
+<body>
+    <div class="toggle">
+       <span></span>
+       <span></span>
+
+    </div>
+    <!-- <div>
+        <button class="close-button" onclick="closeButton()">Close</button>
+
+    </div> -->
+    
+    <script>
+       let menutoggle = document.querySelector('.toggle');
+       menutoggle.onclick = function(){
+        menutoggle.classList.toggle('active')
+       } 
+
+
+    //    function closeButton() {
+    //         document.querySelector('.close-button').style.transform = 'translateX(100%)';
+    //         }
+
+    </script>
+</body>
+</html>
